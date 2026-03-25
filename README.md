@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+# React Shop Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React를 기반으로 만든 간단한 쇼핑몰 프로젝트입니다.  
+상품 목록 조회, 상품 상세 조회, 장바구니 담기 기능을 구현했으며,  
+Redux를 활용해 장바구니 상태를 관리했습니다.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 프로젝트 소개
 
-### `npm start`
+이 프로젝트는 React의 컴포넌트 구조와  
+Redux를 이용한 전역 상태 관리 방식을 연습하기 위해 제작한 쇼핑몰 예제입니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+상품 목록 화면과 상세 화면을 구성하고,  
+상세 페이지에서 상품을 장바구니에 담을 수 있도록 구현했습니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 주요 기능
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 상품 목록 조회
+- 상품 상세 페이지 조회
+- 장바구니 상품 추가
+- Redux를 활용한 전역 상태 관리
+- styled-components를 활용한 UI 구성
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 기술 스택
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React
+- Redux
+- React Router DOM
+- Styled-components
+- JavaScript
+- CSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 폴더 구조
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+src
+ ┣ action
+ ┃ ┗ cartAction.js
+ ┣ components
+ ┃ ┣ detail
+ ┃ ┣ display
+ ┃ ┣ layout
+ ┃ ┗ product
+ ┣ reducers
+ ┃ ┣ cart.js
+ ┃ ┗ index.js
+ ┣ util
+ ┃ ┗ display
+ ┣ App.js
+ ┗ index.js
+ ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 실행 방법
+ 
+ ### 프로젝트 설치
+ ```bash
+ npm install
+ ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+ ### 개발 서버 실행
+ ```bash
+npm start
+```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 구현 내용
 
-### Code Splitting
+  ### 상품 목록
+  상품 데이터를 화면에 출력하고, 사용자가 상품을 확인할 수 있도록 구성했습니다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  ### 상품 상세
+  상품 이미지, 상품명, 가격, 배송비 등의 정보를 상세하게 확인할 수 있도록 구현했습니다.
 
-### Analyzing the Bundle Size
+  ### 장바구니
+  상세 페이지에서 장바구니 버튼 클릭 시 Redux action이 dispatch 되도록 구성했습니다.  
+  장바구니 데이터는 reducer를 통해 전역 상태로 관리합니다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 상태 관리
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+장바구니 기능은 Redux를 통해 관리했습니다.
 
-### Advanced Configuration
+- `action` : 장바구니 추가 액션 정의
+- `reducer` : 장바구니 상태 변경 처리
+- `store` : 전역 상태 저장
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 배운 점
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+이 프로젝트를 통해 다음과 같은 내용을 연습할 수 있었습니다.
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- React 컴포넌트 분리 및 재사용
+- props를 통한 데이터 전달
+- React Router를 활용한 페이지 구성
+- Redux를 활용한 상태 관리 흐름 이해
+- styled-components를 활용한 컴포넌트 단위 스타일링
